@@ -1,10 +1,48 @@
+"use client"
 import Navbar from "./components/Navbar";
 import Image from "next/image";
 import PartnerCard from "./components/partnetCard";
 import AutoScrollPartners from "./components/AutoScrollPartners";
 import ServiceCard from "./components/serviceCard";
+import { useState, useRef } from "react";
+import InfinityGallery from "./components/InfinityGallery";
+import Footer from "./components/Footer";
+
 
 export default function Home() {
+  const [images, setImages] = useState([
+    "/bg.svg", "/img7.svg", "/img4.svg", "/img5.svg", "/img6.svg"
+  ])
+
+  const scrollImages = [
+    "/slider/img1.png", "/slider/img2.png", "/slider/img3.png", "/slider/img4.png", "/slider/img5.png"
+  ]
+  const [current, setCurrent] = useState(0)
+  const [active, setActive] = useState(0)
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const handleNext = () => {
+    setImages(prev => {
+      const arr = [...prev]
+      const first = arr.shift()
+      arr.push(first || "")
+      return arr
+    })
+
+    setCurrent(prev => (prev + 1) % images.length)
+  }
+
+  const handlePrevious = () => {
+    setImages(prev => {
+      const arr = [...prev]
+      const last = arr.pop()
+      arr.unshift(last || "")
+      return arr
+    })
+
+    setCurrent(prev => (prev - 1 + images.length) % images.length)
+  }
+
+
   return (
     <div className="min-h-screen w-full flex flex-col bg-[#121212] overflow-x-hidden overflow-y-visible">
       <Navbar />
@@ -36,7 +74,7 @@ export default function Home() {
         />
 
         <div className="flex 2xl:justify-between xl:justify-between lg:justify-between flex-row sm:flex sm:flex-col md:mt-[-100px] sm:items-center w-full h-full sm:h-auto sm:mt-[-100px]">
-          <div className="relative py-2 z-10 pb-4 sm:py-0 sm:pt-[160px] lg:mr-[130px] px-6 md:px-12 lg:pl-[180px] flex flex-col items-center justify-center sm:items-start sm:justify-start w-full text-center sm:text-left min-[576px]:pt-[30px] z-20 -mt-8 sm:mt-0 2xl:ml-[160px] xl:ml-[70px] lg:ml-[70px] md:ml-[180px] lg:mt-[50px sm:ml-[100px] 2xl:mt-[50px]">
+          <div className="relative py-2 z-10 pb-4 sm:py-0 sm:pt-[160px] lg:mr-[130px] px-6 md:px-12 lg:pl-[180px] flex flex-col items-center justify-center sm:items-start sm:justify-start w-full text-center sm:text-left min-[576px]:pt-[30px] z-20 -mt-8 sm :mt-0 2xl:ml-[160px] xl:ml-[70px] lg:ml-[70px] md:ml-[180px] lg:mt-[50px sm:ml-[100px] 2xl:mt-[50px]">
             <h1 className="relative z-30 font-black text-[17px] md:text-[20px] lg:text-[24px] xl:text-[30px] 2xl:text-[40px] bg-gradient-to-r from-[#C4C4C4] to-[#747474] bg-clip-text text-transparent">
               Về chúng tôi
             </h1>
@@ -165,7 +203,7 @@ export default function Home() {
           <p className="text-center sm:text-left 2xl:max-w-[680px] 2xl:text-[16px] xl:max-w-[680px] xl:text-[16px] lg:max-w-[600px] pt-[20px] lg:text-[14px] md:max-w-[570px] md:text-[13px] sm:max-w-[430px] sm:text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
-      <div className="min-h-screen w-full relative border-t-1 border-[#1D1C1C]">
+      <div className="min-h-screen w-full relative border-t-1 border-[#1D1C1C] z-10">
         <div className="absolute right-0 bg-white/30 blur-3xl rounded-full w-[200px] h-[200px] mt-[50px] hidden sm:block" />
         <div className="absolute w-[200px] h-[200px] right-0 bg-white/30 blur-3xl rounded-full mt-[-150px] hidden sm:block" />
         <div className="absolute z-0 opacity-25 blur-3xl rounded-full bg-radial from-[#904589] to-transparent w-[700px] h-[700px] right-[-10%] top-[-30%] hidden sm:block" />
@@ -182,6 +220,155 @@ export default function Home() {
           <ServiceCard highlight />
           <ServiceCard />
         </div>
+      </div>
+      <div className="relative overflow-hidden min-h-screen 2xl:translate-y-[-200px] xl:translate-y-[-200px] lg:translate-y-[-200px] md:translate-y-[-200px] sm">
+        <Image
+          src="bgg.svg"
+          alt="bgg"
+          width={0}
+          height={0}
+          className="w-[80%] absolute right-0 top-0 z-0"
+        />
+        <div className="relative">
+          <Image
+            src="img4.svg"
+            alt="img4"
+            width={0}
+            height={0}
+            className="w-[35%] absolute left-[20%] 2xl:top-[80px] z-20 xl:top-[80px] lg:top-[80px] md:top-[60px] sm:top-[40px]"
+          />
+          <Image
+            src="img5.svg"
+            alt="img5"
+            width={0}
+            height={0}
+            className="w-[25%] absolute left-[10%] 2xl:top-[250px] z-10 xl:top-[200px] lg:top-[180px] md:top-[140px] sm:top-[100px]"
+          />
+          <Image
+            src="img6.svg"
+            alt="img6"
+            width={0}
+            height={0}
+            className="w-[20%] absolute left-[40%] 2xl:top-[200px] z-30 xl:top-[150px] lg:top-[120px] md:top-[110px] sm:top-[70px]"
+          />
+        </div>
+        <div className="absolute right-[8%] top-[25%] flex z-40 flex-col 2xl:mt-[-120px] 2xl:mr-[-10px] items-end xl:mt-[-160px] xl:mr-[-40px] lg:mt-[-180px] lg:mr-[-20px] md:mt-[-175px] md:mr-[10px] sm:mt-[-200px] sm:mr-[24px]">
+          <h3 className="font-black text-transparent inline-block bg-clip-text bg-gradient-to-r from-[#8ED6D7] to-[#4B7171] 2xl:text-[120px] xl: text-[100px] lg:text-[80px] md:text-[60px] sm:text-[40px]">
+            Lorem ipsum
+          </h3>
+          <p className="font-black 2xl:text-[40px] xl:text-[33px] lg:text-[27px] md:text-[20px] sm:text-[13px]">
+            Lorem ipsum dolor sit amet, consectur
+          </p>
+          <p className="2xl:text-[16px] 2xl:max-w-[520px] text-right ml-[230px] xl:max-w-[520px] xl:text-[15px] lg:text-[13px] lg:max-w-[420px] md:text-[11px] md:max-w-[360px] sm:text-[8px] sm:max-w-[260px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <button className="w-[200px] gap-2 h-[50px] bg-linear-to-r from-[#3F9293] to-[#8E4590] flex justify-center items-center rounded-[12px] mt-6 ml-auto">
+            <p className="text-[20px] font-medium">Liên hệ ngay</p>
+            <Image src="phonebold.svg" alt="phone bold" width={24} height={24} />
+          </button>
+        </div>
+      </div>
+      <div className="w-full flex items-center justify-center mt-[-200px]">
+        <div className="bg-linear-to-r from-[#3F9293] to-[#8E4590] w-[84%] h-[160px] rounded-[20px] flex flex-row items-center justify-center gap-[130px]">
+          <p className="text-black flex flex-row items-center justify-center gap-[20px]">
+            <span className="2xl:text-[45px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">100+</span>
+            <span className="2xl:text-[30px] font-bold">Lorem</span>
+          </p>
+          <p className="text-black flex flex-row items-center justify-center gap-[20px]">
+            <span className="2xl:text-[50px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">300+</span>
+            <span className="2xl:text-[30px] font-bold">Ipsum dolor</span>
+          </p>
+          <p className="text-black flex flex-row items-center justify-center gap-[20px]">
+            <span className="2xl:text-[45px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">95%</span>
+            <span className="2xl:text-[30px] font-bold">Dolor sit amet</span>
+          </p>
+          <p className="text-black flex flex-row items-center justify-center gap-[20px]">
+            <span className="2xl:text-[45px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">10+</span>
+            <span className="2xl:text-[30px] font-bold">Lorem</span>
+          </p>
+        </div>
+      </div>
+      <div className="relative min-h-screen flex flex-row items-center w-full border-t-1 border-[#1D1C1C] mt-[100px]">
+        <div className="flex flex-row items-center justify-between mx-[160px] w-full">
+          <div className="flex flex-col gap-y-[20px] max-w-[50%] mt-[-100px]">
+            <h3 className="2xl:text-[65px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#8ED6D7] to-[#z4B7171] inline-block">Dự án đã thực hiện</h3>
+            <p className="font-black 2xl:text-[38px] mt-[-20px]">Lorem ipsum dolor sit amet, consectur</p>
+            <p className="2xl:max-w-[530px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <button className="flex flex-row items-center justify-center bg-gradient-to-r from-[#3F9293] to-[#8E4590] w-[200px] h-[50px] rounded-[12px] gap-x-[10px]">
+              <p className="text-[20px]">Tìm hiểu thêm</p>
+              <Image src="arrow-circle-right-solid.svg" alt="arrow circle right" width={24} height={24} />
+            </button>
+          </div>
+          <div className="max-w-[50%]">
+            <div className="relative">
+              <div className="relative w-[900px] h-[600px]">
+
+                {images.map((src, i) => {
+                  let style = ""
+                  if (i === active) {
+                    style = "w-[750px] left-0 top-0 z-30"
+                  }
+                  else if (i === (active + 1) % images.length) {
+                    style = "w-[450px] left-[500px] top-[80px] z-20"
+                  }
+                  else {
+                    style = "w-[300px] left-[650px] top-[160px] z-10"
+                  }
+
+                  return (
+                    <Image
+                      key={i}
+                      src={src}
+                      alt=""
+                      width={0}
+                      height={0}
+                      className={`
+        absolute
+        transition-all duration-700 ease-in-out
+        ${style}
+      `}
+                    />
+                  )
+                })}
+
+              </div>
+            </div>
+            <div className="flex flex-row items-center justify-center z=100 relative gap-[20px] mr-[-670px]">
+              <button className="relative z-30 mt-6 px-6 py-5 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white rounded-[12px] border border-white/20 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-3 transition-all duration-300 group" onClick={handlePrevious}>
+                <Image
+                  src="/pre.svg"
+                  alt="play"
+                  width={16}
+                  height={15}
+                  className="relative z-10"
+                />
+              </button>
+              <p className="font-black text-[30px] mt-[20px]">
+                {current + 1}/{images.length}
+              </p>
+              <button className="relative z-30 mt-6 px-6 py-5 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white rounded-[12px] border border-white/20 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-3 transition-all duration-300 group" onClick={handleNext}>
+                <Image
+                  src="/nex.svg"
+                  alt="play"
+                  width={20}
+                  height={0}
+                  className="relative z-10"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col items-center justify-center border-t border-[#1D1C1C] min-h-screen overflow-hidden relative border-b-1 border-[#1D1C1C]">
+        <h3 className="2xl:text-[65px] font-black text-transparent translate-y-[200px] bg-clip-text bg-gradient-to-r from-[#8ED6D7] to-[#4B7171] relative z-30">
+          Hình ảnh về chúng tôi
+        </h3>
+        <InfinityGallery />
+        <div className="absolute w-[4000px] h-[4000px] bg-[#121212] rounded-full left-1/2 -translate-x-1/2 mt-[-3250px] z-20 top-[-350px] " />
+        <div className="absolute w-[4000px] h-[4000px] bg-[#121212] rounded-full left-1/2 -translate-x-1/2 z-20 mb-[-3250px] bottom-[-350px] " />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
