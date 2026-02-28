@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   const [images, setImages] = useState([
-    "/bg.svg", "/img7.svg", "/img4.svg", "/img5.svg", "/img6.svg"
+    "/bg.svg", "/img7.svg", "/img4.svg", "/img5.svg", "/img6.svg"   
   ])
 
   const scrollImages = [
@@ -367,7 +367,7 @@ export default function Home() {
         <div className="absolute w-[4000px] h-[4000px] bg-[#121212] rounded-full left-1/2 -translate-x-1/2 mt-[-3250px] z-20 top-[-350px] " />
         <div className="absolute w-[4000px] h-[4000px] bg-[#121212] rounded-full left-1/2 -translate-x-1/2 z-20 mb-[-3250px] bottom-[-350px] " />
       </div>
-      <div>
+      <div className="min-h-[400px]">
         <Footer />
       </div>
     </div>
