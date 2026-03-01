@@ -4,9 +4,9 @@ export default function Footer() {
     return (
         <div className="flex flex-col w-full">
 
-            <div className="max-w-[1600px] mx-auto w-full flex flex-col md:flex-row md:justify-between gap-20 px-6 py-12">
+            <div className="max-w-[1600px] mx-auto w-full flex flex-col lg:flex-row lg:justify-between gap-10 lg:gap-20 px-6 py-12 items-center lg:items-start text-center lg:text-left">
 
-                <div>
+                <div className="flex flex-col items-center lg:items-start">
                     <div className="flex gap-3 items-center">
                         <Image src="/haivantravellogo.svg" alt="logo" width={120} height={120} />
                         <span className="text-2xl font-bold max-w-[100px]">Hải Vân Travel</span>
@@ -16,7 +16,7 @@ export default function Footer() {
                         Smile Living - Không gian sống đẳng cấp, chất lượng hoàn hảo, uy tín hàng đầu.
                     </p>
 
-                    <div className="flex gap-2 mt-4">
+                    <div className="flex gap-2 mt-4 justify-center lg:justify-start">
                         <Image src="/socialbutton/fb.svg" alt="facebook" width={28} height={28} />
                         <Image src="/socialbutton/yt.svg" alt="youtube" width={28} height={28} />
                         <Image src="/socialbutton/ig.svg" alt="instagram" width={28} height={28} />
@@ -24,7 +24,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 flex flex-col items-center lg:items-start">
                     <h1 className="text-2xl font-bold">Các chi nhánh</h1>
 
                     <div className="flex gap-2">
@@ -42,7 +42,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 flex flex-col items-center lg:items-start">
                     <h1 className="text-2xl font-bold">Liên hệ</h1>
 
                     <div className="flex gap-2">
@@ -61,7 +61,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 flex flex-col items-center lg:items-start">
                     <h1 className="text-2xl font-bold">Đăng ký nhận tin</h1>
 
                     <p className="max-w-[310px]">
@@ -82,11 +82,11 @@ export default function Footer() {
             </div>
 
             <div className="w-full border-t border-white/20">
-                <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-6 py-6">
+                <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 px-6 py-6 text-center lg:text-left">
 
                     <span>© 2025 Hải Vân Travel. Tất cả quyền được bảo lưu.</span>
 
-                    <div className="flex gap-6">
+                    <div className="flex gap-6 flex-col items-center gap-2 lg:flex-row lg:gap-6">
                         <p>Điều khoản sử dụng</p>
                         <p>Chính sách bảo mật</p>
                         <p>Sơ đồ trang</p>

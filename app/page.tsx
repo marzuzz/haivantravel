@@ -221,15 +221,15 @@ export default function Home() {
           <ServiceCard />
         </div>
       </div>
-      <div className="relative overflow-hidden min-h-screen 2xl:translate-y-[-200px] xl:translate-y-[-200px] lg:translate-y-[-200px] md:translate-y-[-200px] sm">
+      <div className="relative overflow-hidden min-h-screen 2xl:min-h-[120vh] xl:min-h-[65vh] lg:min-h-[60vh] md:min-h-[55vh] sm:min-h-[calc(100vh-500px)] max-sm:min-h-[400px] max-sm:mt-[-50px] 2xl:translate-y-[-300px] xl:translate-y-[-300px] lg:translate-y-[-200px] md:translate-y-[-200px] sm">
         <Image
           src="bgg.svg"
           alt="bgg"
           width={0}
           height={0}
-          className="w-[80%] absolute right-0 top-0 z-0"
+          className="w-[80%] absolute right-0 top-0 max-sm:top-[100px] z-0"
         />
-        <div className="relative">
+        <div className="relative max-sm:hidden">
           <Image
             src="img4.svg"
             alt="img4"
@@ -252,48 +252,50 @@ export default function Home() {
             className="w-[20%] absolute left-[40%] 2xl:top-[200px] z-30 xl:top-[150px] lg:top-[120px] md:top-[110px] sm:top-[70px]"
           />
         </div>
-        <div className="absolute right-[8%] top-[25%] flex z-40 flex-col 2xl:mt-[-120px] 2xl:mr-[-10px] items-end xl:mt-[-160px] xl:mr-[-40px] lg:mt-[-180px] lg:mr-[-20px] md:mt-[-175px] md:mr-[10px] sm:mt-[-200px] sm:mr-[24px]">
-          <h3 className="font-black text-transparent inline-block bg-clip-text bg-gradient-to-r from-[#8ED6D7] to-[#4B7171] 2xl:text-[120px] xl: text-[100px] lg:text-[80px] md:text-[60px] sm:text-[40px]">
+        <div className="absolute right-[8%] flex z-40 flex-col max-sm:inset-0 max-sm:right-0 max-sm:flex max-sm:items-center max-sm:justify-center max-sm:max-w-full max-sm:translate-y-0 max-sm:top-0 top-[25%] 2xl:mt-[-120px] 2xl:mr-[-10px] items-end xl:mt-[-160px] xl:mr-[-40px] lg:mt-[-180px] lg:translate-y-[100px] lg:mr-[-20px] md:mt-[-175px] md:mr-[10px] sm:mt-[-200px] sm:translate-y-[100px] sm:mr-[24px]">
+          <div className="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:max-w-[400px]">
+          <h3 className="font-black text-transparent inline-block bg-clip-text bg-gradient-to-r from-[#8ED6D7] to-[#4B7171] max-sm:text-center max-sm:max-w-[400px] max-sm:text-[20px] 2xl:text-[120px] xl: text-[100px] lg:text-[80px] md:text-[60px] sm:text-[40px]">
             Lorem ipsum
           </h3>
-          <p className="font-black 2xl:text-[40px] xl:text-[33px] lg:text-[27px] md:text-[20px] sm:text-[13px]">
+          <p className="font-black text-[16px] max-sm:text-center max-sm:max-w-[400px] 2xl:text-[40px] xl:text-[33px] lg:text-[27px] md:text-[20px] sm:text-[13px]">
             Lorem ipsum dolor sit amet, consectur
           </p>
-          <p className="2xl:text-[16px] 2xl:max-w-[520px] text-right ml-[230px] xl:max-w-[520px] xl:text-[15px] lg:text-[13px] lg:max-w-[420px] md:text-[11px] md:max-w-[360px] sm:text-[8px] sm:max-w-[260px]">
+          <p className="text-[12px] max-sm:text-center max-sm:max-w-[400px] max-sm:ml-0 2xl:text-[16px] 2xl:max-w-[520px] text-right ml-[230px] xl:max-w-[520px] xl:text-[15px] lg:text-[13px] lg:max-w-[420px] md:text-[11px] md:max-w-[360px] sm:text-[8px] sm:max-w-[260px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-          <button className="w-[200px] gap-2 h-[50px] bg-linear-to-r from-[#3F9293] to-[#8E4590] flex justify-center items-center rounded-[12px] mt-6 ml-auto">
+          <button className="w-[200px] gap-2 h-[50px] bg-linear-to-r from-[#3F9293] to-[#8E4590] flex justify-center items-center rounded-[12px] mt-6 ml-auto max-sm:mx-auto">
             <p className="text-[20px] font-medium">Liên hệ ngay</p>
             <Image src="phonebold.svg" alt="phone bold" width={24} height={24} />
           </button>
+          </div>
         </div>
       </div>
-      <div className="w-full flex items-center justify-center mt-[-200px]">
-        <div className="bg-linear-to-r from-[#3F9293] to-[#8E4590] w-[84%] h-[160px] rounded-[20px] flex flex-row items-center justify-center gap-[130px]">
-          <p className="text-black flex flex-row items-center justify-center gap-[20px]">
-            <span className="2xl:text-[45px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">100+</span>
-            <span className="2xl:text-[30px] font-bold">Lorem</span>
+      <div className="w-full flex items-center justify-center mt-[-200px] max-sm:mt-[20px]">
+        <div className="bg-linear-to-r from-[#3F9293] to-[#8E4590] w-[84%] h-[160px] sm:h-[120px] max-sm:h-[100px] rounded-[20px] flex flex-row items-center justify-center max-sm:justify-between gap-[32px] max-sm:gap-0 px-[20px]">
+          <p className="text-black flex flex-col items-center justify-center gap-[4px] max-sm:gap-[2px]">
+            <span className="2xl:text-[45px] xl:text-[28px] lg:text-[25px] md:text-[22px] max-sm:text-[14px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">100+</span>
+            <span className="2xl:text-[30px] xl:text-[25px] lg:text-[20px] md:text-[18px] max-sm:text-[10px] font-bold">Lorem</span>
           </p>
-          <p className="text-black flex flex-row items-center justify-center gap-[20px]">
-            <span className="2xl:text-[50px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">300+</span>
-            <span className="2xl:text-[30px] font-bold">Ipsum dolor</span>
+          <p className="text-black flex flex-col items-center justify-center gap-[4px] max-sm:gap-[2px]">
+            <span className="2xl:text-[50px] xl:text-[28px] lg:text-[25px] md:text-[22px] max-sm:text-[14px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">300+</span>
+            <span className="2xl:text-[30px] xl:text-[25px] lg:text-[20px] md:text-[18px] max-sm:text-[10px] font-bold">Ipsum dolor</span>
           </p>
-          <p className="text-black flex flex-row items-center justify-center gap-[20px]">
-            <span className="2xl:text-[45px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">95%</span>
-            <span className="2xl:text-[30px] font-bold">Dolor sit amet</span>
+          <p className="text-black flex flex-col items-center justify-center gap-[4px] max-sm:gap-[2px]">
+            <span className="2xl:text-[45px] xl:text-[28px] lg:text-[25px] md:text-[22px] max-sm:text-[14px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">95%</span>
+            <span className="2xl:text-[30px] xl:text-[25px] lg:text-[20px] md:text-[18px] max-sm:text-[10px] font-bold">Dolor sit amet</span>
           </p>
-          <p className="text-black flex flex-row items-center justify-center gap-[20px]">
-            <span className="2xl:text-[45px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">10+</span>
-            <span className="2xl:text-[30px] font-bold">Lorem</span>
+          <p className="text-black flex flex-col items-center justify-center gap-[4px] max-sm:gap-[2px]">
+            <span className="2xl:text-[45px] xl:text-[28px] lg:text-[25px] md:text-[22px] max-sm:text-[14px] font-black bg-clip-text text-transparent bg-gradient-to-r from-[#121212] to-[#4D4D4D]">10+</span>
+            <span className="2xl:text-[30px] xl:text-[25px] lg:text-[20px] md:text-[18px] max-sm:text-[10px] font-bold">Lorem</span>
           </p>
         </div>
       </div>
-      <div className="relative min-h-screen flex flex-row items-center w-full border-t-1 border-[#1D1C1C] mt-[100px]">
-        <div className="flex flex-row items-center justify-between mx-[160px] w-full">
-          <div className="flex flex-col gap-y-[20px] max-w-[50%] mt-[-100px]">
-            <h3 className="2xl:text-[65px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#8ED6D7] to-[#z4B7171] inline-block">Dự án đã thực hiện</h3>
-            <p className="font-black 2xl:text-[38px] mt-[-20px]">Lorem ipsum dolor sit amet, consectur</p>
-            <p className="2xl:max-w-[530px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div className="relative min-h-screen flex flex-row items-center w-full border-t-1 border-[#1D1C1C] mt-[100px] max-sm:mt-[-100px]">
+        <div className="flex flex-row items-center justify-between mx-[160px] max-sm:mx-[16px] w-full">
+          <div className="flex flex-col gap-y-[20px] max-w-[50%] mt-[-100px] sm:translate-x-[-100px]">
+            <h3 className="2xl:text-[65px] xl:text-[50px] lg:text-[40px] md:text-[40px] sm:text-[20px] max-sm:text-[16px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#8ED6D7] to-[#z4B7171] inline-block">Dự án đã thực hiện</h3>
+            <p className="font-black 2xl:text-[38px] xl:text-[30px] lg:text-[20px] md:text-[30px] sm:text-[18px] max-sm:text-[14px] mt-[-20px]">Lorem ipsum dolor sit amet, consectur</p>
+            <p className="2xl:max-w-[530px] lg:text-[14px] md:text-[15px] md:max-w-[300px] sm:text-[14px] max-sm:text-[12px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <button className="flex flex-row items-center justify-center bg-gradient-to-r from-[#3F9293] to-[#8E4590] w-[200px] h-[50px] rounded-[12px] gap-x-[10px]">
               <p className="text-[20px]">Tìm hiểu thêm</p>
               <Image src="arrow-circle-right-solid.svg" alt="arrow circle right" width={24} height={24} />
@@ -301,7 +303,7 @@ export default function Home() {
           </div>
           <div className="max-w-[50%]">
             <div className="relative">
-              <div className="relative w-[900px] h-[600px]">
+              <div className="relative w-[900px] h-[600px] xl:scale-[0.8] xl:origin-center lg:scale-[0.65] lg:origin-center lg:translate-x-[-200px] md:scale-[0.6] md:origin-center md:translate-x-[-350px] sm:scale-[0.5] sm:origin-center sm:translate-x-[-400px] max-sm:scale-[0.36] max-sm:origin-center max-sm:translate-x-[-300px]">
 
                 {images.map((src, i) => {
                   let style = ""
@@ -333,7 +335,7 @@ export default function Home() {
 
               </div>
             </div>
-            <div className="flex flex-row items-center justify-center z=100 relative gap-[20px] mr-[-670px]">
+            <div className="flex flex-row items-center justify-center z-100 relative gap-[20px] 2xl:mr-[-670px] xl:mr-[-770px] lg:mr-[-550px] lg:translate-x-[-200px] md:mr-[-320px] md:translate-x-[-250px] sm:mr-[-80px] sm:translate-x-[-200px] max-sm:translate-x-[-200px] max-sm:mr-[-80px] max-sm:mt-[-100px]">
               <button className="relative z-30 mt-6 px-6 py-5 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-white rounded-[12px] border border-white/20 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-3 transition-all duration-300 group" onClick={handlePrevious}>
                 <Image
                   src="/pre.svg"
@@ -360,7 +362,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center border-t border-[#1D1C1C] min-h-screen overflow-hidden relative border-b-1 border-[#1D1C1C]">
-        <h3 className="2xl:text-[65px] font-black text-transparent translate-y-[200px] bg-clip-text bg-gradient-to-r from-[#8ED6D7] to-[#4B7171] relative z-30">
+        <h3 className="2xl:text-[65px] xl:text-[60px] lg:text-[50px] md:text-[40px] sm:text-[30px] text-[40px] font-black text-transparent translate-y-[200px] bg-clip-text bg-gradient-to-r from-[#8ED6D7] to-[#4B7171] relative z-30">
           Hình ảnh về chúng tôi
         </h3>
         <InfinityGallery />
